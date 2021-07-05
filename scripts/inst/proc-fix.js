@@ -12,11 +12,11 @@ const ops = {
 
 	// proc.updateCode(proc.code + "\n" + line)
 	addf: {
-		args: {code: "obj", line: "obj"},
+		args: {line: "obj"},
 
 		run(proc, args) {
 			if (typeof(args.line) != "string") return;
-			proc.updateCode(args.code + "\n" + args.line);
+			proc.updateCode(proc.code + "\n" + args.line);
 		}
 	}
 
