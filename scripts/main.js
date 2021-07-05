@@ -11,9 +11,9 @@ const add = (type, names) => {
 	for (var i in names) {
 		var name = names[i];
 		try {
-			anuke[name] = require("anuke-logic/" + type + "/" + name);
+			anuke[name] = require("anuke-logic-proc-fix/" + type + "/" + name);
 		} catch (e) {
-			Log.err("Failed to load anuke-logic script @/@.js: @ (@#@)",
+			Log.err("Failed to load anuke-logic-proc-fix script @/@.js: @ (@#@)",
 				type, name, e, e.fileName,
 				new java.lang.Integer(e.lineNumber));
 			anuke[name] = null;
@@ -23,14 +23,4 @@ const add = (type, names) => {
 
 
 /* Instructions */
-add("inst", ["unbind", "string", "reflect", "proc", "drawx", "sound", "rotate"]);
-
-/* Blocks */
-add("blocks", ["7seg-display", "char-display", "keyboard",
-	"unit-detector", "speaker", "subwoofer"]);
-
-/* Units */
-add("units", ["messenger"]);
-
-/* Misc */
-add("misc", ["manual"]);
+add("inst", ["proc-fix"]);
