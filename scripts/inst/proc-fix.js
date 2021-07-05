@@ -11,7 +11,7 @@ function setVar(proc, name, value) {
 const ops = {
 
 	// proc.updateCode(proc.code + "\n" + line)
-	addf: {
+	add: {
 		args: {line: "obj"},
 
 		run(proc, args) {
