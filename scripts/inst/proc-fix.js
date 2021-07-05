@@ -9,36 +9,18 @@ function setVar(proc, name, value) {
 }
 
 const ops = {
-	// code = proc.code
-	get: {
-		args: {code: "obj"},
-		run(proc, args, inst) {
-			inst.vm.setobj(inst.indices.code, proc.code);
-		}
-	},
-
-	// proc.updateCode(code)
-	set: {
-		args: {code: "obj"},
-
-		run(proc, args) {
-			if (typeof(args.code) != "string") return;
-			if (args.code == proc.code) return;
-			proc.updateCode(args.code);
-		}
-	},
 
 	// proc.updateCode(proc.code + "\n" + line)
-	add: {
+	addf: {
 		args: {line: "obj"},
 
 		run(proc, args) {
 			if (typeof(args.line) != "string") return;
 			proc.updateCode(args.code + "\n" + args.line);
 		}
-	},
+	}
 
-	linked: {
+	/* linked: {
 		args: {link: "building", linked: "bool"},
 
 		run(proc, args, inst) {
@@ -96,8 +78,8 @@ const ops = {
 				setVar(proc, out.name, args.link);
 			}
 		}
-	}
-};
+	} */
+}; 
 
 const ProcI = {
 	_(builder, op, proc, args) {
