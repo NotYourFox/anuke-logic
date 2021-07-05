@@ -1,9 +1,9 @@
 {
-	"name": "anuke-logic",
-	"displayName": "[white]Anuke [purple]Logic",
-	"author": "DeltaNedas",
+	"name": "anuke-logic-proc-fix",
+	"displayName": "[white]Anuke [purple]Logic [green]Proc Add Fix",
+	"author": "DeltaNedas (fixed by GamerXFox)",
 	"description": "Adds random logic utilities. Praise the cat.",
-	"repo": "DeltaNedas/anuke-logic",
+	"repo": "NotYourFox/anuke-logic-proc-fix",
 	"version": "1.9.3.1",
 	"minGameVersion": 122
 }
