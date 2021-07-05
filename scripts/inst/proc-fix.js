@@ -192,7 +192,7 @@ const ProcStatement = {
 	},
 
 	write(b) {
-		b.append("procfix ");
+		b.append("proc ");
 		b.append(this.op + " ");
 		b.append(this.processor);
 
@@ -203,13 +203,13 @@ const ProcStatement = {
 		}
 	},
 
-	name: () => "Proc Fix",
+	name: () => "Proc",
 	color: () => Pal.logicBlocks
 };
 
-global.anuke.register("procfix", ProcStatement, [
-	"procfix",
-	"addf",
+global.anuke.register("proc", ProcStatement, [
+	"proc",
+	"get",
 	"@this",
 	"mycode"
 ]);
