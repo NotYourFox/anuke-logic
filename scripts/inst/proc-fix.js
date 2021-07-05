@@ -225,8 +225,8 @@ const ProcStatement = {
 	color: () => Pal.logicBlocks
 };
 
-global.anuke.register("proc", ProcStatement, [
-	"proc",
+global.anuke.register("procfix", ProcStatement, [
+	"procfix",
 	"get",
 	"@this",
 	"mycode"
