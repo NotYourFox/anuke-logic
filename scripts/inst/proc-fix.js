@@ -12,7 +12,7 @@ const ops = {
 
 	// proc.updateCode(proc.code + "\n" + line)
 	addf: {
-		args: {line: "obj"},
+		args: {code: "obj", line: "obj"},
 
 		run(proc, args) {
 			if (typeof(args.line) != "string") return;
@@ -209,7 +209,7 @@ const ProcStatement = {
 
 global.anuke.register("procfix", ProcStatement, [
 	"procfix",
-	"get",
+	"addf",
 	"@this",
 	"mycode"
 ]);
