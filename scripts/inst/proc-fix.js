@@ -210,7 +210,7 @@ const ProcStatement = {
 	},
 
 	write(b) {
-		b.append("proc ");
+		b.append("procfix ");
 		b.append(this.op + " ");
 		b.append(this.processor);
 
@@ -221,7 +221,7 @@ const ProcStatement = {
 		}
 	},
 
-	name: () => "Proc",
+	name: () => "Proc Fix",
 	color: () => Pal.logicBlocks
 };
 
