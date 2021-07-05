@@ -10,8 +10,7 @@ function setVar(proc, name, value) {
 
 const ops = {
 
-	// proc.updateCode(proc.code + "\n" + line)
-	add: {
+	addf: {
 		args: {line: "obj"},
 
 		run(proc, args) {
@@ -19,66 +18,7 @@ const ops = {
 			proc.updateCode(proc.code + "\n" + args.line);
 		}
 	}
-
-	/* linked: {
-		args: {link: "building", linked: "bool"},
-
-		run(proc, args, inst) {
-			if (!args.link) return;
-			var linked = false;
-
-			if (proc.validLink(args.link)) {
-				const x = args.link.tileX();
-				const y = args.link.tileY();
-				linked = proc.links.find(l => l.x == x && l.y == y);
-				linked = linked ? linked.active : false;
-			}
-
-			inst.vm.setbool(inst.indices.linked, linked);
-		}
-	},
-
-	link: {
-		args: {link: "building"},
-
-		run(proc, args, inst) {
-			if (!args.link) return;
-			if (!proc.validLink(args.link)) return;
-
-			const x = args.link.tileX();
-			const y = args.link.tileY();
-			const existing = linked = proc.links.find(l => l.x == x && l.y == y);
-
-			if (existing && existing.active) {
-				existing.active = false;
-
-				setVar(proc, existing.name, null);
-
-				const bname = LogicBlock.getLinkName(args.link.block);
-				if(!existing.name.startsWith(bname)){
-					existing.name = "";
-					existing.name = proc.findLinkName(args.link.block);
-				}
-
-				proc.exec.vars[inst.linksidx].numval--;
-			} else {
-				// Processors with no code have no executor
-				if (proc.exec) {
-					proc.exec.vars[inst.linksidx].numval++;
-				}
-
-				if (existing) {
-					existing.active = true;
-					return;
-				}
-
-				const out = new LogicBlock.LogicLink(x, y, proc.findLinkName(args.link.block), true);
-				proc.links.add(out);
-
-				setVar(proc, out.name, args.link);
-			}
-		}
-	} */
+	
 }; 
 
 const ProcI = {
@@ -192,7 +132,7 @@ const ProcStatement = {
 	},
 
 	write(b) {
-		b.append("proc ");
+		b.append("procfix ");
 		b.append(this.op + " ");
 		b.append(this.processor);
 
@@ -203,13 +143,13 @@ const ProcStatement = {
 		}
 	},
 
-	name: () => "Proc",
+	name: () => "Proc Fix",
 	color: () => Pal.logicBlocks
 };
 
-global.anuke.register("proc", ProcStatement, [
-	"proc",
-	"get",
+global.anuke.register("procfix", ProcStatement, [
+	"procfix",
+	"addf",
 	"@this",
 	"mycode"
 ]);
