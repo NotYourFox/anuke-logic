@@ -10,12 +10,21 @@ function setVar(proc, name, value) {
 
 const ops = {
 
-	addf: {
+	addline: {
 		args: {line: "obj"},
 
 		run(proc, args) {
 			if (typeof(args.line) != "string") return;
 			proc.updateCode(proc.code + "\n" + args.line);
+		}
+	},
+	
+	addcode: {
+		args: {code: "obj"},
+
+		run(proc, args) {
+			if (typeof(args.line) != "string") return;
+			proc.updateCode(proc.code + "\n" + args.code);
 		}
 	}
 	
