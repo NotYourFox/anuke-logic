@@ -5,5 +5,6 @@
 	"description": "Fixes PROC ADD function in DeltaNedas's Anuke Logic mod. Fixed function syntax: procfix addf <link> <line>",
 	"repo": "NotYourFox/anuke-logic-proc-fix",
 	"version": "1.9.3.1",
-	"minGameVersion": 122
+	"minGameVersion": "122",
+	"hidden": "false"
 }
