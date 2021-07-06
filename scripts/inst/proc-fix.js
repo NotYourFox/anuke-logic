@@ -23,7 +23,7 @@ const ops = {
 		args: {code: "obj"},
 
 		run(proc, args) {
-			if (typeof(args.line) != "string") return;
+			if (typeof(args.code) != "string") return;
 			proc.updateCode(proc.code + "\n" + args.code);
 		}
 	}
