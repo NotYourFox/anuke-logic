@@ -27,7 +27,7 @@ const ops = {
 			proc.updateCode(proc.code + "\n" + args.code);
 		}
 	}
-	
+
 }; 
 
 const ProcI = {
@@ -158,7 +158,7 @@ const ProcStatement = {
 
 global.anuke.register("procfix", ProcStatement, [
 	"procfix",
-	"addf",
+	"addline",
 	"@this",
 	"mycode"
 ]);
